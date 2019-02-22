@@ -119,7 +119,7 @@ namespace BirthdayPicker
         {
             if (Date.Day == DateTime.Today.Day && Date.Month == DateTime.Today.Month)
             {
-                MessageBox.Show("Happy Birthday! ");
+                MessageBox.Show("Happy Birthday, Dear! Wish you luck <3");
             }
         }
 
