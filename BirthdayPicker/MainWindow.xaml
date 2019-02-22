@@ -1,0 +1,34 @@
+﻿<Window x:Class="BirthdayPicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BirthdayPicker"
+        mc:Ignorable="d"
+        Title="Birthday computer application" Height="500" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <!--DatePicker Title -->
+            <RowDefinition Height="100" />
+            <!--DatePicker -->
+            <RowDefinition Height="Auto" />
+            <!--Button -->
+            <RowDefinition Height="Auto" />
+            <!--Age -->
+            <RowDefinition Height="Auto" />
+            <!--West and chinese zodiac -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label      Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"  VerticalAlignment="Center" FontWeight="Bold" FontSize="17" Content="Pick your birthday date"/>
+        <DatePicker Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="30" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDate="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button     Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin ="20 0 20 0" Padding="5"  Content="Submit birthday date" Command="{Binding SubmitCommand}"/>
+        <TextBlock  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Padding="10" FontWeight="Bold" FontSize="20" TextAlignment="Center" Text="{Binding Age, Mode=oneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock  Grid.Row="4" Grid.Column="0"                     HorizontalAlignment="Center"  VerticalAlignment="Stretch" Padding="10" TextAlignment="Center" Text="{Binding WesternZodiac, Mode=oneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock  Grid.Row="4" Grid.Column="1"                     HorizontalAlignment="Center"  VerticalAlignment="Stretch" Padding="10" TextAlignment="Center" Text="{Binding ChineseZodiac, Mode=oneWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>
